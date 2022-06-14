@@ -2,7 +2,6 @@ import java.awt.Component;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 import javax.swing.JFileChooser;
 
@@ -11,8 +10,6 @@ import FileReader.ReadFile;
 import Sort.RandomizedQsort;
 public class App {
     public static void main(String[] args) {
-		
-		Scanner ga = new Scanner(System.in);
 		
 		 JFileChooser chooser = new JFileChooser();
 		 
@@ -24,27 +21,27 @@ public class App {
 		 	File[] files = chooser.getSelectedFiles();
 			
 		 	ArrayList<String> valores = new ArrayList<String>();
+
 			ReadFile[] archivos = new ReadFile[files.length];
 				
 			for (int i = 0; i < files.length; i++) {
 					archivos[i]= new ReadFile();
-					int tmp[]=archivos[i].lee(files[i].toString(), 12);
+					int tmp[]=archivos[i].lee(files[i].toString());
 					
+
 					long inicioTemp = System.nanoTime();
 					RandomizedQsort.sort(tmp, 0, tmp.length-1);
 					long finTemp = System.nanoTime();
 					long tTemp=finTemp-inicioTemp;
 					
-					valores.add("Array Ordenado de "+files[i].toString()+" : "+Arrays.toString(tmp)+"con un tiempo de: "+String.valueOf(tTemp)+"nanosegundos");
+					valores.add("Array Ordenado de "+files[i].toString()+" : "+Arrays.toString(tmp)+" con un tiempo de: "+String.valueOf(tTemp)+"nanosegundos");
 								
-				   // System.out.println("Array Ordenado");
-				     //RandomizedQsort.printArray(tmp);
 				     System.out.println(valores.get(i));
 		
 			}
 			
-			String x= "layka.txt";
-			CreateFile.creaDoc(valores,x);
+			String pathResultado= "resultado.txt";
+			CreateFile.creaDoc(valores,pathResultado);
 
 }
 }

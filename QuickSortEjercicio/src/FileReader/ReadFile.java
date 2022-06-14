@@ -1,53 +1,70 @@
 package FileReader;
 
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
+import java.io.BufferedReader;
+import java.io.File; 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class ReadFile {
-	static int tsize;
+
 	
-	
+	private File archivo;
+    private FileReader fr;
+    private BufferedReader br;
+    private ArrayList<Integer> numsTemp = new ArrayList<>();
+
+
+    private boolean abrirArchivo(String path){
+        try{
+            archivo = new File(path);
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+        }catch(FileNotFoundException e){
+            System.out.println("Error: "+e.getMessage());
+            return false;
+        }
+        return true;
+    }
 		
-	public  int[] lee (String archivo, int ancho) {
+	public  int[] lee (String path) {
+		String line;
+		int [] numeros;
+		if(abrirArchivo(path)){
+                
+			try {
+				while ((line = br.readLine())!= null) {
+					int t = Integer.parseInt(line);
+					numsTemp.add(t);
+				}
+			} catch (IOException e) {
+				System.out.println("Error: "+e.getMessage());
+			} catch (NumberFormatException e){
+				System.out.println("Error: "+e.getMessage());
+			}finally{
+				try {
+					if (br != null)
+						br.close();
+					if (fr != null)
+						fr.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+			}
+
+		}
+
+		numeros = new int[numsTemp.size()];
+        for (int i = 0; i < numsTemp.size(); i++) {
+            numeros[i] = numsTemp.get(i);
+        }
+
+        numsTemp.clear();
+
 		
-		
-		int cont=0;
-		int []datos=new int[ancho];
-		tsize=ancho;
-		 try {
-		      File myObj = new File(archivo);
-		      Scanner myReader = new Scanner(myObj);
-		      while (myReader.hasNextInt()) {
-		    	datos[cont]=myReader.nextInt();
-		        
-		        //System.out.println(datos[cont]);
-		        cont++;
-		      }
-		      myReader.close();
-		    } catch (FileNotFoundException e) {
-		      System.out.println("Error");
-		      e.printStackTrace();
-		    }
-		return datos;
+		return numeros;
 		
 	}
-	
-	
-	
-	  public static int getTsize() {
-		return tsize;
-	}
 
-
-
-
-
-	public static void main(String[] args) {
-		  
-		 /* String x= "filename.txt";
-		  lee(x,10);
-		  int y[]= lee(x,10);
-		  System.out.println(y.length);*/
-	  }
 }
