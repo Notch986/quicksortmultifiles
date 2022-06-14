@@ -7,6 +7,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Clase que permite manejar archivos de lectura. Tiene como actor principal
+ * al metodo "leer" que hace uso del metodo privado abrir archivo.
+ */
 public class ReadFile {
 
 	
@@ -16,6 +20,13 @@ public class ReadFile {
     private ArrayList<Integer> numsTemp = new ArrayList<>();
 
 
+	/**
+	 * Método privado que abre el archivo con el nombre ingresado como 
+	 * parametro, crea los buffers correspondientes. Retorna verdadero si no hubo 
+	 * problemas al abrir el archivo, de lo contrario es falso.
+	 * @param path
+	 * @return
+	 */
     private boolean abrirArchivo(String path){
         try{
             archivo = new File(path);
@@ -28,6 +39,12 @@ public class ReadFile {
         return true;
     }
 		
+	/**
+	 * Método que recibe como parametro un path de un fichero, lee cada linea
+	 * y almacena la informacion en un arreglo.
+	 * @param path
+	 * @return
+	 */
 	public  int[] lee (String path) {
 		String line;
 		int [] numeros;

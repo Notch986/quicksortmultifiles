@@ -1,9 +1,19 @@
 package Sort;
 
-
+/**
+ * Clase que proporciona el metodo estatico "sort" para ordenar arreglos de enteros
+ * usando el algoritmo de QickSort
+ */
 public class QuickSort {
 	
 
+    /**
+     * Metodo que recibe como parametros una arreglo de enteros 
+     * e indices para ejecutar el algoritmo.
+     * @param numeros
+     * @param izq
+     * @param der
+     */
 	public static void sort(int[] numeros, int izq, int der){
         int pivote=numeros[izq]; // tomamos primer elemento como pivote
         int i=izq;         // i realiza la búsqueda de izquierda a derecha
