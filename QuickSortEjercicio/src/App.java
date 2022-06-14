@@ -7,7 +7,7 @@ import javax.swing.JFileChooser;
 
 import FileReader.CreateFile;
 import FileReader.ReadFile;
-import Sort.RandomizedQsort;
+import Sort.QuickSort;
 public class App {
     public static void main(String[] args) {
 		
@@ -30,7 +30,7 @@ public class App {
 					
 
 					long inicioTemp = System.nanoTime();
-					RandomizedQsort.sort(tmp, 0, tmp.length-1);
+					QuickSort.sort(tmp, 0, tmp.length-1);
 					long finTemp = System.nanoTime();
 					long tTemp=finTemp-inicioTemp;
 					
