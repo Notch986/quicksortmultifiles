@@ -2,22 +2,17 @@ import java.awt.Component;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Scanner;
 
 import javax.swing.JFileChooser;
 
-import quicksort.RandomizedQsort;
-import readmngfiles.CreateFile;
-import readmngfiles.ReadFile;
-
-
-public class main {
-
-	public static void main(String[] args) {
+import FileReader.CreateFile;
+import FileReader.ReadFile;
+import Sort.RandomizedQsort;
+public class App {
+    public static void main(String[] args) {
 		
 		Scanner ga = new Scanner(System.in);
-		System.out.
 		
 		 JFileChooser chooser = new JFileChooser();
 		 
@@ -51,4 +46,5 @@ public class main {
 			String x= "layka.txt";
 			CreateFile.creaDoc(valores,x);
 
-}}
+}
+}

@@ -1,3 +1,0 @@
-Array Ordenado de E:\code\java_projects_2022\quicksort\filename.txt : [0, 2, 5, 6, 7, 8, 9, 11, 12, 13, 14, 45]con un tiempo de: 27778700nanosegundos
-Array Ordenado de E:\code\java_projects_2022\quicksort\filename2.txt : [6, 8, 12, 15, 19, 24, 26, 30, 32, 33, 35, 42]con un tiempo de: 13400nanosegundos
-Array Ordenado de E:\code\java_projects_2022\quicksort\filename3.txt : [4, 5, 6, 7, 20, 33, 34, 37, 46, 46, 47, 48]con un tiempo de: 14500nanosegundos

@@ -1,4 +1,4 @@
-package readmngfiles;
+package FileReader;
 
 
 import java.io.File;
@@ -51,7 +51,7 @@ public class CreateFile
 			
 		}
 		
-		public static void creaDoc(ArrayList file, String name) {
+		public static void creaDoc(ArrayList<String> file, String name) {
 			File file1 = new File(name); //inicia el objeto
 			Desktop desktop = Desktop.getDesktop();  
 			
@@ -99,40 +99,4 @@ public class CreateFile
 			
 		}
 		
-		public static void main(String[] args){     
-			/*File file = new File("resultado.txt"); //initialize File object and passing path as argument  
-			boolean result;  
-			try   
-			{  
-			result = file.createNewFile();  //creates a new file 
-			
-			try {
-			    PrintWriter fileout = new PrintWriter(new FileWriter("resultado_.txt"));
-			
-			    for (int i = 1; i < 1001; i++) {
-			        fileout.println(i);
-			    }
-			    fileout.close();
-			    System.out.println("success...");
-			} catch (Exception e) {
-			    System.out.println(e);
-			}
-			
-			if(result)      // test if successfully created a new file  
-			{  
-			System.out.println("file created "+file.getCanonicalPath()); //returns the path string  
-			}  
-			else  
-			{  
-			System.out.println("File already exist at location: "+file.getCanonicalPath());  
-			}  
-			}   
-			catch (IOException e)   
-			{  
-			e.printStackTrace();    //prints exception if any  
-			} */
-			
-			//int arr[] = {10, 7, 8, 9, 1, 6,5,33};
-			//expulsa(arr);
-			}  
 }  

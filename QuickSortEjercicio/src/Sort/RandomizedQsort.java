@@ -1,4 +1,4 @@
-package quicksort;
+package Sort;
 import java.util.Random;
 
 public class RandomizedQsort {

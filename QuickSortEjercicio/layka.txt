@@ -1,0 +1,3 @@
+Array Ordenado de /home/panocca/Documentos/GitHub/temp/filename.txt : [0, 2, 5, 6, 7, 8, 9, 11, 12, 13, 14, 45]con un tiempo de: 400998nanosegundos
+Array Ordenado de /home/panocca/Documentos/GitHub/temp/filename2.txt : [6, 8, 12, 15, 19, 24, 26, 30, 32, 33, 35, 42]con un tiempo de: 21163nanosegundos
+Array Ordenado de /home/panocca/Documentos/GitHub/temp/filename3.txt : [4, 5, 6, 7, 20, 33, 34, 37, 46, 46, 47, 48]con un tiempo de: 23597nanosegundos
